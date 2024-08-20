@@ -5,7 +5,13 @@ pipeline {
 			steps {
 				echo 'Hi, you are inside the pipeline'
 				}
-			}	
+			}
+			
+		stage('List Files') {
+			steps {
+				sh 'ls -R'
+				}
+			}
 		stage('build') {
 			steps {
 				script {
