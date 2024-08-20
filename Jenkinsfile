@@ -6,9 +6,14 @@ pipeline {
 				echo 'Hi, you are inside the pipeline'
 				}
 			}	
+		stage('Giving permission') {
+			steps {
+				sh 'chmod +x build.sh'
+				}
+			}
 		stage('build') {
 			steps {
-					sh './build.sh'
+				sh './build.sh'
 				}
 			}	
 		stage('image push to docker hub') {
