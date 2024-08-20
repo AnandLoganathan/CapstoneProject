@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Welcome') {
 			steps {
-				echo 'Hi, you are inside the pipeline'
+				echo 'Hi Welcome, you are inside the pipeline'
 				}
 			}	
 		stage('Giving permission') {
