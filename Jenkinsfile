@@ -8,8 +8,7 @@ pipeline {
 			}	
 		stage('build') {
 			steps {
-				sh '.build.sh'
-				sh 'docker tag nginx:capstone anandxmech/dev:latest
+				sh './build.sh'
 				}
 			}
 		stage('image push to docker hub') {

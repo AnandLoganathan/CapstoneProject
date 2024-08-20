@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f "Dockerfile" ]; then 
-	docker build -t nginx:capstone .
+	docker build -t anandxmech/dev:latest .
 	echo "Image built successfully";
 	exit 1;
 else
