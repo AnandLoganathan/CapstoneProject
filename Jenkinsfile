@@ -8,14 +8,16 @@ pipeline {
 			}	
 		stage('build') {
 			steps {
-				sh './build.sh'
+				script {
+					sh 'docker build -t anandxmech/dev:capstone .'
+					}
 				}
-			}
+			}	
 		stage('image push to docker hub') {
 			steps {
 				script {
 					sh 'docker login -u anandxmech -p Anand@123'
-					sh 'docker push anandxmech/dev:latest'
+					sh 'docker push anandxmech/dev:capstone'
 					}
 				}
 			}
