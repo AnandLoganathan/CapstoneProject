@@ -18,7 +18,7 @@ pipeline {
 					}
 				}
 			}	
-		stage('List Files') {
+		stage('List Files Secondary') {
 			steps {
 				sh 'ls -R'
 				}
