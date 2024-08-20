@@ -8,9 +8,7 @@ pipeline {
 			}	
 		stage('build') {
 			steps {
-				script {
 					sh './build.sh'
-					}
 				}
 			}	
 		stage('image push to docker hub') {
