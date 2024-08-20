@@ -5,8 +5,7 @@ pipeline {
 			steps {
 				echo 'Hi, you are inside the pipeline'
 				}
-			}
-			
+			}	
 		stage('List Files') {
 			steps {
 				sh 'ls -R'
@@ -15,10 +14,15 @@ pipeline {
 		stage('build') {
 			steps {
 				script {
-					sh './build.sh'
+					sh 'docker build -t anandxmech/dev:capstone .'
 					}
 				}
 			}	
+		stage('List Files') {
+			steps {
+				sh 'ls -R'
+				}
+			}
 		stage('image push to docker hub') {
 			steps {
 				script {
