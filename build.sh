@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f "Dockerfile" ]; then 
-	sudo docker build -t anandxmech/dev:latest .
+	docker build -t anandxmech/dev:capstone .
 	echo "Image built successfully";
 	exit 1;
 else

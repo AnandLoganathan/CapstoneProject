@@ -15,7 +15,7 @@ pipeline {
 		stage('build') {
 			steps {
 				script {
-					sh 'docker build -t anandxmech/dev:capstone .'
+					sh './build.sh'
 					}
 				}
 			}	

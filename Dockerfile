@@ -2,7 +2,7 @@ From nginx:latest
 
 Workdir .
 
-Copy build/ /usr/share/nginx/html/
+Copy ./build/ /usr/share/nginx/html/
 
 Expose 80
 
