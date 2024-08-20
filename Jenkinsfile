@@ -6,23 +6,13 @@ pipeline {
 				echo 'Hi, you are inside the pipeline'
 				}
 			}	
-		stage('List Files') {
-			steps {
-				sh 'ls -R'
-				}
-			}
 		stage('build') {
 			steps {
 				script {
-					sh 'docker build -t anandxmech/dev:capstone .'
+					sh './build.sh'
 					}
 				}
 			}	
-		stage('List Files Secondary') {
-			steps {
-				sh 'ls -R'
-				}
-			}
 		stage('image push to docker hub') {
 			steps {
 				script {
