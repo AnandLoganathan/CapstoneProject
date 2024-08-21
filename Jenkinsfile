@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Welcome') {
 			steps {
-				echo 'Hi Welcome, you are inside the pipeline'
+				echo 'Hi, you are inside the pipeline'
 				}
 			}	
 		stage('Giving permission') {
@@ -21,6 +21,14 @@ pipeline {
 				script {
 					sh 'docker login -u anandxmech -p Anand@123'
 					sh 'docker push anandxmech/dev:capstone'
+					}
+				}
+			}
+		stage('deployment') {
+			steps {
+				script {
+					sh 'chmod +x deploy.sh'
+					sh './deploy.sh'
 					}
 				}
 			}
