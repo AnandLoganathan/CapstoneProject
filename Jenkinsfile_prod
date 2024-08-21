@@ -1,0 +1,26 @@
+pipeline {
+	agent any
+	stages {
+		stage('Welcome') {
+			steps {
+				echo 'Hi welcome!'
+				}
+			}
+		stage('image for prod branch') {
+			steps {
+				script {
+					sh 'chmod +x build_prod.sh'
+					sh './build_prod.sh'
+					}
+				}
+			}
+		stage('image push to prod branch') {
+			steps {
+				script {
+					sh 'docker login -u anandxmech -p Anand@123'
+					sh 'docker push anandxmech/prod:capstone'
+					}
+				}
+			}
+		}
+	}

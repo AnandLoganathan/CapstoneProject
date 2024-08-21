@@ -1,4 +1,2 @@
-build
-build.sh
-docker-compose.yml
-deploy.sh
+README.md
+Jenkinsfile

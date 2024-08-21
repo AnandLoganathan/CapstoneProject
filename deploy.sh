@@ -1,9 +1,15 @@
 #!/bin/bash
 
 if [ -f "docker-compose.yml" ]; then
-	sudo docker-compose up -d
+	docker-compose up -d
+	if [ $? -eq 0 ]; then
 	echo "Container running successfully"
-	exit 1;
+	exit 0;
 else
-	echo "File doesn't exists"
+	echo "Some issue in running the container"
+	exit 2;
+	fi
+else	
+	echo "file doesn't exists"
+	exit 3;
 fi
