@@ -2,7 +2,7 @@ From nginx:latest
 
 Workdir .
 
-Copy ./nginx.conf /etc/nginx/
+Copy nginx.conf /etc/nginx/
 
 Copy ./build/ /usr/share/nginx/html/
 
